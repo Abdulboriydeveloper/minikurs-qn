@@ -101,8 +101,10 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    const amo = await createAmoCrmLead(name, phone);
-    await sendToSheet(name, phone);
+    const [amo] = await Promise.all([
+      createAmoCrmLead(name, phone),
+      sendToSheet(name, phone),
+    ]);
 
     sendJson(res, 200, { ok: true, amo });
   } catch (error) {
