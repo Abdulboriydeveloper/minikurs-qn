@@ -22,7 +22,7 @@ async function readBody(req) {
 
 async function createAmoCrmLead(name, phone) {
   const lead = {
-    name: `${name} - Mini Kurs`,
+    name: `${name} - Mini Kurs Qarz`,
     pipeline_id: AMO_PIPELINE_ID,
     status_id: AMO_STATUS_ID,
     _embedded: {
