@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#faf7f2">
+<meta name="description" content="2 kunlik BEPUL Onlayn darsda qarzlardan qutilib moliyaviy mustaqillikka erishing">
+<title>Qarzlardan Qutilib Moliyaviy Mustaqillikka Erishing</title>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#c8102e;
+  --red-light:#f5e5e8;
+  --cream:#faf7f2;
+  --warm:#f0ebe2;
+  --dark:#1a1208;
+  --mid:#4a3a2a;
+  --muted:#6b5a4a;
+  --gold:#c49a3c;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  --serif:Georgia,'Times New Roman',serif;
+}
+html,body{background:var(--cream);color:var(--dark);font-family:var(--font);min-height:100vh;max-width:480px;margin:0 auto;overflow-x:hidden}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--red);color:#fff;text-align:center;padding:10px 20px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+
+/* ── BADGE ── */
+.badge{display:flex;align-items:center;justify-content:center;gap:8px;margin:20px auto 0;width:fit-content;background:#fff;border:1.5px solid #e0d8cc;border-radius:50px;padding:8px 20px;font-size:12.5px;font-weight:700;color:var(--mid);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.badge-dot{width:7px;height:7px;background:var(--red);border-radius:50%;animation:pulse 1.4s ease-in-out infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── HERO ── */
+.hero{padding:20px 22px 0;text-align:center}
+.hero h1{font-family:var(--serif);font-size:18px;font-weight:900;line-height:1.15;color:var(--dark)}
+.hero h1 em{color:var(--red);font-style:normal;font-size:26px}
+.hero-divider{width:48px;height:3px;background:var(--gold);margin:14px auto;border-radius:2px}
+.hero p{font-size:13.5px;font-weight:600;line-height:1.55;color:var(--mid)}
+
+/* ── CTA BANNER ── */
+.cta-banner{
+  margin:20px 20px 0;background:#fff;border-radius:16px;padding:16px 22px;
+  text-align:center;font-size:14px;font-weight:700;line-height:1.5;cursor:pointer;
+  border:1px solid #c8102e;width:calc(100% - 40px);color:#c8102e;
+  font-family:var(--font);display:block;position:relative;overflow:hidden;
+}
+.cta-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(200,16,46,.06),transparent);transform:translateX(-100%);animation:shimmer 2.5s ease-in-out infinite}
+@keyframes shimmer{to{transform:translateX(100%)}}
+
+/* ── PERSON SECTION ── */
+.person-section{
+  position:relative;margin:16px 20px 0;background:var(--warm);
+  border-radius:24px;overflow:hidden;height:280px;contain:layout;
+}
+.person-section::after{content:'';position:absolute;right:0;top:0;width:55%;height:100%;background:linear-gradient(135deg,rgba(200,16,46,.07) 0%,transparent 60%);pointer-events:none}
+.person-placeholder{position:absolute;right:0;bottom:0;width:185px;height:270px}
+.person-placeholder img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+
+.bullet-list{position:absolute;left:0;top:0;width:55%;z-index:1;padding:20px 16px 20px 20px}
+.bullet-label{font-size:10px;font-weight:800;margin-bottom:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);border-left:3px solid var(--red);padding-left:8px}
+.bullet-item{margin-bottom:12px;font-size:12px;line-height:1.5;color:var(--mid);position:relative;padding-left:16px}
+.bullet-item::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:9px;top:2px}
+.bullet-item strong{color:var(--dark);font-weight:700}
+
+/* ── TIMER ── */
+.timer-section{margin:20px 20px 0;background:#fff;border-radius:16px;padding:10px 20px;display:flex;align-items:center;gap:16px;border:1.5px solid #e8e0d4;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timer-icon{width:44px;height:44px;background:var(--red-light);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
+.timer-box{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--red);letter-spacing:2px;font-variant-numeric:tabular-nums}
+.timer-text{font-size:12px;font-weight:600;color:var(--muted);line-height:1.4;margin-top:2px}
+
+/* ── MAIN BTN ── */
+.main-btn{display:block;margin:18px 20px 0;background:var(--red);color:#fff;font-family:var(--font);font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;border:none;border-radius:50px;padding:19px 20px;width:calc(100% - 40px);cursor:pointer;box-shadow:0 6px 24px rgba(200,16,46,.3);animation:shake 2.8s ease-in-out infinite}
+@keyframes shake{0%,82%,100%{transform:translateX(0)}85%{transform:translateX(-5px)}88%{transform:translateX(5px)}91%{transform:translateX(-3px)}94%{transform:translateX(3px)}}
+.hint{text-align:center;font-size:12px;color:var(--muted);margin:12px 0 28px;display:flex;align-items:center;justify-content:center;gap:6px}
+.hint svg{transform:rotate(-90deg);animation:arrowUp 1s ease-in-out infinite}
+@keyframes arrowUp{0%,100%{transform:rotate(-90deg) translateX(0)}50%{transform:rotate(-90deg) translateX(-5px)}}
+
+/* ── MODAL ── */
+.overlay{display:none;position:fixed;inset:0;background:rgba(26,18,8,.75);z-index:100;align-items:center;justify-content:center;padding:20px}
+.overlay.open{display:flex}
+.modal{background:#fff;border-radius:24px;padding:30px 24px 32px;width:100%;max-width:420px;position:relative;animation:popIn .2s ease-out;border-top:4px solid var(--red)}
+@keyframes popIn{from{transform:scale(.93) translateY(10px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.close-btn{position:absolute;top:12px;right:14px;background:#f0ede8;border:none;color:#1a1208;font-size:20px;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-weight:700}
+.close-btn:hover{background:#e0dbd4}
+.form-title{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.form-sub{font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.5}
+.field-label{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:8px;display:block}
+
+/* Name input */
+.name-input-wrap{display:flex;align-items:center;border:2px solid #c8bfb0;border-radius:14px;padding:0 16px;margin-bottom:16px;background:#faf8f5;transition:border-color .2s}
+.name-input-wrap:focus-within{border-color:var(--red);background:#fff}
+.name-icon{font-size:16px;margin-right:10px;flex-shrink:0}
+.name-input{background:none;border:none;outline:none;color:var(--dark);font-family:var(--font);font-size:16px;font-weight:600;padding:15px 0;width:100%}
+.name-input::placeholder{color:#999;font-weight:400}
+
+.phone-input-wrap{display:flex;align-items:center;border:2px solid #c8bfb0;border-radius:14px;padding:0 16px;margin-bottom:16px;background:#faf8f5;transition:border-color .2s}
+.phone-input-wrap:focus-within{border-color:var(--red);background:#fff}
+.flag{font-size:18px;margin-right:6px}
+.prefix-txt{font-size:15px;font-weight:700;color:var(--dark);padding:15px 4px}
+.divider-v{width:1px;height:24px;background:#ccc;margin:0 10px;flex-shrink:0}
+.phone-input{background:none;border:none;outline:none;color:var(--dark);font-family:var(--font);font-size:16px;font-weight:600;padding:15px 0;width:100%}
+.phone-input::placeholder{color:#999}
+.submit-btn{width:100%;background:var(--red);color:#fff;font-family:var(--font);font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:1px;border:none;border-radius:50px;padding:18px;cursor:pointer;box-shadow:0 4px 16px rgba(200,16,46,.25);position:relative;overflow:hidden}
+.submit-btn:hover{background:#a00820}
+.submit-btn:disabled{opacity:.7;cursor:not-allowed}
+.submit-btn .btn-spinner{display:none;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;margin:0 auto}
+.submit-btn.loading .btn-text{display:none}
+.submit-btn.loading .btn-spinner{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-msg{color:#b00020;font-size:12.5px;font-weight:700;margin-top:-10px;margin-bottom:12px;display:none}
+
+/* ── THANK YOU PAGE ── */
+#telegramPage{display:none;position:fixed;inset:0;background:var(--cream);z-index:200;align-items:center;justify-content:center;padding:32px 24px;max-width:480px;margin:0 auto}
+#telegramPage.show{display:flex}
+.tg-card{width:100%;text-align:center}
+.steps{display:flex;align-items:center;justify-content:center;margin-bottom:32px;padding:0}
+.step{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;border:2.5px solid var(--red);color:var(--red);background:#fff;flex-shrink:0}
+.step.done{background:var(--red);color:#fff}
+.step-line{width:40px;height:2.5px;background:var(--red)}
+.tg-icon{width:72px;height:72px;background:#eef8f1;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.tg-title{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--dark);margin-bottom:10px}
+.tg-sub{font-size:14px;color:var(--mid);line-height:1.65;margin-bottom:28px}
+</style>
+</head>
+<body>
+
+<!-- ── LANDING ── -->
+<div id="landingPage">
+  <div class="topbar">🎓 Maxsus Onlayn Dars — Joylar Cheklangan!</div>
+
+  <main>
+    <div class="hero">
+      <h1><em>QARZ VA NASIYALARDAN</em> QUTILISHI MINI KURSI</h1>
+      <div class="hero-divider" aria-hidden="true"></div>
+    </div>
+
+    <button class="cta-banner" id="ctaTop" type="button" aria-haspopup="dialog">
+      ✦ Hoziroq ro'yxatdan o'ting ✦
+    </button>
+
+    <section class="person-section" aria-label="Masterklassda o'rganiladigan mavzular">
+      <div class="bullet-list">
+        <p class="bullet-label" aria-hidden="true">Mini kursda:</p>
+        <ul>
+          <li class="bullet-item">Qarzdan qutilib <strong>qayta kirmaslik</strong> ning aniq usullari</li>
+          <li class="bullet-item">Xarajatlarni yopib <strong>daromad va investitsiya</strong> qilish ilmi</li>
+          <li class="bullet-item">Maqsadlarga <strong>10 barobargacha</strong> tezroq erishish</li>
+        </ul>
+      </div>
+      <div class="person-placeholder">
+        <img
+          src="umidaka2.webp"
+          alt="Kurs muallifi — moliyaviy mustaqillik bo'yicha ekspert"
+          width="185"
+          height="270"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+    </section>
+
+    <div class="timer-section">
+      <div class="timer-icon" aria-hidden="true">⏳</div>
+      <div>
+        <div class="timer-box" id="timer" aria-label="Ro'yxatdan o'tish yopilishiga qolgan vaqt">02:00</div>
+        <div class="timer-text">Ro'yxatdan o'tish yopilishiga qoldi</div>
+      </div>
+    </div>
+
+    <button class="main-btn" id="mainBtn" type="button" aria-haspopup="dialog">
+      🎓 BEPUL QATNASHISH
+    </button>
+
+    <p class="hint" aria-hidden="true">
+      Bosib ro'yxatdan o'ting — joylar cheklangan!
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </p>
+  </main>
+</div>
+
+<!-- ── MODAL ── -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+  <div class="modal">
+    <button class="close-btn" id="closeBtn" type="button" aria-label="Oynani yopish">&#215;</button>
+    <h2 class="form-title" id="modalTitle">Ro'yxatdan O'ting</h2>
+    <p class="form-sub" id="modalDesc">Bepul masterclassda qatnashish uchun ma'lumotlaringizni kiriting</p>
+
+    <!-- NAME FIELD -->
+    <label class="field-label" for="nameInput">Ismingiz</label>
+    <div class="name-input-wrap">
+      <span class="name-icon" aria-hidden="true">👤</span>
+      <input
+        type="text"
+        class="name-input"
+        id="nameInput"
+        placeholder="Ism Familiya"
+        maxlength="60"
+        autocomplete="name"
+        aria-required="true"
+        aria-describedby="errorMsg"
+      >
+    </div>
+
+    <!-- PHONE FIELD -->
+    <label class="field-label" for="phoneInput">Telefon raqam</label>
+    <div class="phone-input-wrap">
+      <span class="flag" aria-hidden="true">🇺🇿</span>
+      <span class="prefix-txt" aria-hidden="true">+998</span>
+      <div class="divider-v" aria-hidden="true"></div>
+      <input
+        type="tel"
+        class="phone-input"
+        id="phoneInput"
+        placeholder="90 123 45 67"
+        maxlength="12"
+        inputmode="numeric"
+        autocomplete="tel"
+        aria-required="true"
+        aria-describedby="errorMsg"
+        oninput="formatPhone(this)"
+      >
+    </div>
+
+    <div class="error-msg" id="errorMsg" role="alert" aria-live="assertive">
+      ⚠ Iltimos, ism va to'g'ri telefon raqamini kiriting
+    </div>
+
+    <button class="submit-btn" id="submitBtn" type="button" onclick="submitForm()">
+      <span class="btn-text">YUBORISH →</span>
+      <span class="btn-spinner"></span>
+    </button>
+  </div>
+</div>
+
+<!-- ── THANK YOU PAGE ── -->
+<div id="telegramPage" role="region" aria-label="Ariza qabul qilindi">
+  <div class="tg-card">
+    <nav class="steps" aria-label="Ro'yxatdan o'tish bosqichlari — yakunlandi">
+      <div class="step done" aria-label="1-qadam bajarildi">✓</div>
+      <div class="step-line" aria-hidden="true"></div>
+      <div class="step done" aria-label="2-qadam bajarildi">✓</div>
+      <div class="step-line" aria-hidden="true"></div>
+      <div class="step done" aria-label="3-qadam bajarildi">✓</div>
+    </nav>
+    <div class="tg-icon" aria-hidden="true">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1f8f4a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
+    <h1 class="tg-title" id="tgTitle" tabindex="-1">Arizangiz qabul qilindi</h1>
+    <p class="tg-sub">Tez orada siz bilan bog'lanamiz.</p>
+  </div>
+</div>
+
+<script>
+// TIMER
+var s = 120, timerEl = document.getElementById('timer');
+function pad(n){ return String(n).padStart(2,'0'); }
+function tick(){
+  if(s <= 0){ timerEl.textContent = '00:00'; return; }
+  s--; timerEl.textContent = pad(Math.floor(s/60)) + ':' + pad(s%60);
+}
+tick(); setInterval(tick, 1000);
+
+// MODAL
+var overlay = document.getElementById('overlay');
+var lastFocus = null;
+function openModal(){
+  lastFocus = document.activeElement;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function(){ document.getElementById('nameInput').focus(); }, 50);
+}
+function closeModal(){
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  if(lastFocus) lastFocus.focus();
+}
+document.getElementById('ctaTop').addEventListener('click', openModal);
+document.getElementById('mainBtn').addEventListener('click', openModal);
+document.getElementById('closeBtn').addEventListener('click', closeModal);
+overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+document.querySelector('.modal').addEventListener('click', function(e){ e.stopPropagation(); });
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+});
+document.querySelector('.modal').addEventListener('keydown', function(e){
+  if(e.key !== 'Tab') return;
+  var focusable = this.querySelectorAll('button,input,[href],[tabindex]:not([tabindex="-1"])');
+  var first = focusable[0], last = focusable[focusable.length - 1];
+  if(e.shiftKey){ if(document.activeElement === first){ e.preventDefault(); last.focus(); } }
+  else { if(document.activeElement === last){ e.preventDefault(); first.focus(); } }
+});
+
+// PHONE FORMAT
+function formatPhone(el){
+  var v = el.value.replace(/\D/g,'').substring(0,9), out = '';
+  if(v.length > 0) out = v.substring(0,2);
+  if(v.length > 2) out += ' ' + v.substring(2,5);
+  if(v.length > 5) out += ' ' + v.substring(5,7);
+  if(v.length > 7) out += ' ' + v.substring(7,9);
+  el.value = out;
+  document.getElementById('errorMsg').style.display = 'none';
+  el.removeAttribute('aria-invalid');
+}
+
+// AMOCRM + GOOGLE SHEET — server orqali yuborish
+function isStaticLocalPreview(){
+  var isLocalHost = location.hostname === '127.0.0.1' || location.hostname === 'localhost';
+  return isLocalHost && (location.port === '5500' || location.port === '5501');
+}
+
+async function sendLead(name, phone){
+  if(isStaticLocalPreview()){
+    console.warn('Local static preview: /api/lead endpoint ishlamaydi. Vercel deployda amoCRMga yuboriladi.');
+    return;
+  }
+
+  var res = await fetch('/api/lead', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name: name, phone: phone })
+  });
+
+  if(!res.ok){
+    var err = await res.text();
+    throw new Error(err || 'Lead yuborilmadi');
+  }
+}
+
+// SUBMIT
+var defaultErrorText = "Iltimos, ism va to'g'ri telefon raqamini kiriting";
+async function submitForm(){
+  var nameVal  = document.getElementById('nameInput').value.trim();
+  var rawPhone = document.getElementById('phoneInput').value.replace(/\D/g,'');
+  var errEl    = document.getElementById('errorMsg');
+  var inp      = document.getElementById('phoneInput');
+  var nameInp  = document.getElementById('nameInput');
+  var btn      = document.getElementById('submitBtn');
+
+  // Validatsiya
+  if(nameVal.length < 2 || rawPhone.length < 9){
+    errEl.textContent = defaultErrorText;
+    errEl.style.display = 'block';
+    if(nameVal.length < 2){ nameInp.setAttribute('aria-invalid','true'); nameInp.focus(); }
+    else { inp.setAttribute('aria-invalid','true'); inp.focus(); }
+    return;
+  }
+
+  var fullPhone = '+998' + rawPhone;
+
+  // Loading holati
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  // Pixel
+  if(typeof fbq !== 'undefined') fbq('track','Lead');
+
+  try {
+    await sendLead(nameVal, fullPhone);
+  } catch (error) {
+    console.error('Lead submit error:', error);
+    errEl.textContent = "Yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.";
+    errEl.style.display = 'block';
+    btn.classList.remove('loading');
+    btn.disabled = false;
+    return;
+  }
+
+  btn.classList.remove('loading');
+  btn.disabled = false;
+
+  closeModal();
+  var tp = document.getElementById('telegramPage');
+  tp.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function(){
+    var h = document.getElementById('tgTitle');
+    if(h) h.focus();
+  }, 100);
+}
+
+// META PIXEL — fully deferred
+var pixelLoaded = false;
+function loadPixel(){
+  if(pixelLoaded) return; pixelLoaded = true;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.defer=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','929040389510053'); fbq('track','PageView');
+}
+['touchstart','mousedown','scroll'].forEach(function(ev){
+  document.addEventListener(ev, loadPixel, { once:true, passive:true });
+});
+setTimeout(loadPixel, 5000);
+</script>
+</body>
+</html>
