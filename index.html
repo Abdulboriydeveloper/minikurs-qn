@@ -350,26 +350,15 @@ async function submitForm(){
 
   var fullPhone = '+998' + rawPhone;
 
-  // Loading holati
-  btn.classList.add('loading');
+  // Takror bosishni oldini olamiz, yuborishni esa fonda davom ettiramiz.
   btn.disabled = true;
 
   // Pixel
   if(typeof fbq !== 'undefined') fbq('track','Lead');
 
-  try {
-    await sendLead(nameVal, fullPhone);
-  } catch (error) {
+  sendLead(nameVal, fullPhone).catch(function(error){
     console.error('Lead submit error:', error);
-    errEl.textContent = "Yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.";
-    errEl.style.display = 'block';
-    btn.classList.remove('loading');
-    btn.disabled = false;
-    return;
-  }
-
-  btn.classList.remove('loading');
-  btn.disabled = false;
+  });
 
   closeModal();
   var tp = document.getElementById('telegramPage');
